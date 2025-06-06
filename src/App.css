@@ -1,6 +1,6 @@
 .app{
     background-color: #f0f0f0;
-    height: 100vh;
+    height: fit-content;
 }
 .app__body{
     display: flex;

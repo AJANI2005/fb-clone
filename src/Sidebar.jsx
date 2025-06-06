@@ -9,11 +9,12 @@ import ChatIcon from '@mui/icons-material/Chat';
 import StorefrontIcon from '@mui/icons-material/Storefront';
 import VideoLibraryIcon from '@mui/icons-material/VideoLibrary';
 import ExpandMoreOutlined from '@mui/icons-material/ExpandMoreOutlined';
-
+import { useStateValue } from './StateProvider';
 function Sidebar() {
+  const [{ user }, dispatch] = useStateValue();
   return (
     <div className="sidebar">
-        <SidebarRow src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d" title="ajani" />
+        <SidebarRow src={user?.photoURL} title={user?.displayName} />
         <SidebarRow Icon={LocalHositalIcon} title="COVID-19 Information Center" />
         <SidebarRow Icon={EmojiFlagsIcon} title="Pages" />
         <SidebarRow Icon={PeopleIcon} title="Friends" />
